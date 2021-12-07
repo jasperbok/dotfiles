@@ -13,3 +13,5 @@ echo 'Start nvim and run :PlugInstall'
 mkdir -p ~/.config/fish
 cp fish/config.fish ~/.config/fish/config.fish
 cp fish/functions/* ~/.config/fish/functions/
+
+cp git/gitconfig ~/.gitconfig
