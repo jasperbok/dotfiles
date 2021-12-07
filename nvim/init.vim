@@ -30,13 +30,6 @@ set shiftwidth=4
 set list
 
 " ----------------------------------
-" FZF Extensions
-" ----------------------------------
-
-set rtp+=/usr/local/opt/fzf
-nnoremap <C-p> :FZF<CR>
-
-" ----------------------------------
 " Filetype configurations
 " ----------------------------------
 
@@ -65,6 +58,7 @@ augroup END
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'numToStr/Comment.nvim'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -72,3 +66,7 @@ call plug#end()
 " ------------------
 
 lua require('Comment').setup()
+
+" FZF
+" ------------------
+nnoremap <C-p> :FZF<CR>
