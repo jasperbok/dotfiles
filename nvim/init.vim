@@ -59,6 +59,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'numToStr/Comment.nvim'
 Plug 'junegunn/fzf'
+Plug 'karb94/neoscroll.nvim'
 
 call plug#end()
 
@@ -66,6 +67,11 @@ call plug#end()
 " ------------------
 
 lua require('Comment').setup()
+"
+" Neoscroll
+" ------------------
+
+lua require('neoscroll').setup()
 
 " FZF
 " ------------------
