@@ -13,7 +13,7 @@ live_config_reload: true
 mouse:
   hide_when_typing: true
 shell:
-  program: /usr/local/bin/fish
+  program: {{ .homebrew.prefix }}/bin/fish
 colors:
   primary:
     background: '#2e3440'
