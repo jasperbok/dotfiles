@@ -1,0 +1,40 @@
+# set-option can set four types of options:
+# server (-s), session (default), window (-w) and pane (-p)
+# With -g, a global session or window option is set.
+
+# Remove timeout after pressing escape.
+set-option -s escape-time 0
+
+set-option -sg default-terminal "screen-256color"
+
+# Session options
+# ===============
+
+# Change the default shell to Fish.
+set-option -g default-shell {{ .homebrew.prefix }}/bin/fish
+
+# Enable mouse mode.
+set-option -g mouse on
+
+# Window options
+# ==============
+
+# Raise the default window history limit to 10.000 lines.
+set-option -g history-limit 10000
+
+# Use vi-style key bindings in copy mode.
+set-option -g mode-keys vi
+
+# Key bindings
+# ============
+
+unbind -T copy-mode-vi Space
+unbind -T copy-mode-vi Enter
+bind -T copy-mode-vi v send-keys -X begin-selection
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+
+unbind r
+bind r source-file ~/.tmux.conf \; display "Reloaded config"
+
+unbind s
+bind s set-window-option synchronize-panes
