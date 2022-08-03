@@ -62,6 +62,13 @@ local markdown_augroup = vim.api.nvim_create_augroup('filetype_markdown', {clear
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
   group = markdown_augroup,
+  command = 'setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2|setlocal textwidth=80'
+})
+
+local html_augroup = vim.api.nvim_create_augroup('filetype_html', {clear = true})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'html|htmldjango',
+  group = html_augroup,
   command = 'setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2'
 })
 
