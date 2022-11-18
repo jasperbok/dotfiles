@@ -26,6 +26,8 @@ vim.opt.shiftwidth = 4
 -- Display invisible characters (tabs, trailing whitespace, etc.).
 vim.opt.list = true
 
+vim.g.mapleader = " "
+
 -- ----------------------------------
 -- Filetype configurations
 -- ----------------------------------
