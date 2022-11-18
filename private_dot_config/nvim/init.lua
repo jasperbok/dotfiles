@@ -11,9 +11,6 @@ vim.opt.ignorecase = true
 -- Enable line numbers.
 vim.opt.number = true
 
--- Splits are automatically made the same size.
-vim.opt.equalalways = true
-
 -- Number of visual spaces a tab character counts for.
 vim.opt.tabstop = 4
 
