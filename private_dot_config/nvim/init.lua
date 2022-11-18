@@ -89,6 +89,7 @@ vim.call("plug#begin", "~/.config/nvim/plugged")
 Plug('numToStr/Comment.nvim')
 Plug('junegunn/fzf')
 Plug('arcticicestudio/nord-vim')
+Plug('mcchrish/nnn.vim')
 
 vim.call("plug#end")
 
@@ -100,3 +101,15 @@ require("Comment").setup()
 -- FZF
 -- ------------------
 vim.cmd("nnoremap <C-p> :FZF<CR>")
+
+-- nnn
+-- ------------------
+
+require("nnn").setup({
+  command = "nnn -o -C",
+  set_default_mappings = 0,
+  replace_netrw = 1,
+})
+
+vim.api.nvim_set_keymap("n", "<leader>o", ":NnnPicker %:p:h<CR>", {noremap=true})
+vim.cmd("let g:nnn#session = 'global'")
