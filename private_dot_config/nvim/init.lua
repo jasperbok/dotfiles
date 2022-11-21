@@ -90,6 +90,8 @@ Plug('numToStr/Comment.nvim')
 Plug('junegunn/fzf')
 Plug('arcticicestudio/nord-vim')
 Plug('mcchrish/nnn.vim')
+Plug('editorconfig/editorconfig-vim')
+Plug('lukas-reineke/indent-blankline.nvim')
 
 vim.call("plug#end")
 
@@ -113,3 +115,8 @@ require("nnn").setup({
 
 vim.api.nvim_set_keymap("n", "<leader>o", ":NnnPicker %:p:h<CR>", {noremap=true})
 vim.cmd("let g:nnn#session = 'global'")
+
+-- indent-blankline
+-- ------------------
+
+require('indent_blankline').setup()
