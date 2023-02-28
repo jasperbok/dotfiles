@@ -92,6 +92,7 @@ Plug('arcticicestudio/nord-vim')
 Plug('mcchrish/nnn.vim')
 Plug('editorconfig/editorconfig-vim')
 Plug('lukas-reineke/indent-blankline.nvim')
+Plug('sheerun/vim-polyglot')
 
 vim.call("plug#end")
 
