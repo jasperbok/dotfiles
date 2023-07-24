@@ -93,8 +93,14 @@ Plug('mcchrish/nnn.vim')
 Plug('editorconfig/editorconfig-vim')
 Plug('lukas-reineke/indent-blankline.nvim')
 Plug('sheerun/vim-polyglot')
+Plug('catppuccin/nvim', {as = 'catppuccin'})
 
 vim.call("plug#end")
+
+-- Colorscheme
+-- ------------------
+
+vim.cmd("colorscheme catppuccin-mocha")
 
 -- Comment
 -- ------------------
