@@ -85,6 +85,13 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2'
 })
 
+local asciidoc_augroup = vim.api.nvim_create_augroup('filetype_asciidoc', {clear = true})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'asciidoc',
+  group = asciidoc_augroup,
+  command = 'setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2|setlocal tw=72|setlocal spell|setlocal spelllang=nl'
+})
+
 -- ----------------------------------
 -- Plugins
 -- ----------------------------------
