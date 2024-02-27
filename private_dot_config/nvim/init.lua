@@ -140,4 +140,4 @@ vim.cmd("let g:nnn#session = 'global'")
 -- indent-blankline
 -- ------------------
 
-require('indent_blankline').setup()
+require('ibl').setup()
