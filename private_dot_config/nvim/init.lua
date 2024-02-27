@@ -100,6 +100,8 @@ local Plug = vim.fn["plug#"]
 
 vim.call("plug#begin", "~/.config/nvim/plugged")
 
+Plug('nvim-lua/plenary.nvim') -- Requirement for telescope.
+Plug('nvim-telescope/telescope.nvim', {tag = '0.1.5' })
 Plug('numToStr/Comment.nvim')
 Plug('junegunn/fzf')
 Plug('arcticicestudio/nord-vim')
@@ -124,6 +126,14 @@ require("Comment").setup()
 -- FZF
 -- ------------------
 vim.cmd("nnoremap <C-p> :FZF<CR>")
+
+-- Telescope
+-- ------------------
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- nnn
 -- ------------------
