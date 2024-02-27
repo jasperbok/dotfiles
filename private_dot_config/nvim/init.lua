@@ -26,6 +26,10 @@ vim.opt.shiftwidth = 4
 -- Display invisible characters (tabs, trailing whitespace, etc.).
 vim.opt.list = true
 
+-- Disable mouse mode completely, so we can select text using the
+-- mouse from withint tmux.
+vim.opt.mouse = ''
+
 vim.g.mapleader = " "
 
 -- ----------------------------------
