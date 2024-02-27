@@ -78,6 +78,13 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal tabstop=3|setlocal shiftwidth=3|setlocal softtabstop=3|setlocal tw=72'
 })
 
+local json_augroup = vim.api.nvim_create_augroup('filetype_json', {clear = true})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'json',
+  group = json_augroup,
+  command = 'setlocal tabstop=2|setlocal shiftwidth=2|setlocal softtabstop=2'
+})
+
 -- ----------------------------------
 -- Plugins
 -- ----------------------------------
