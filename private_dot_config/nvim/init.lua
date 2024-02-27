@@ -32,6 +32,9 @@ vim.opt.mouse = ''
 
 vim.g.mapleader = " "
 
+-- Always show 8 lines above or below the cursor when scrolling.
+vim.opt.scrolloff = 8
+
 -- ----------------------------------
 -- Filetype configurations
 -- ----------------------------------
