@@ -1,0 +1,4 @@
+# lg is a shortcut to start lazygit with a specific config dir.
+function lg
+    lazygit --use-config-dir {{ .chezmoi.homeDir }}/.config/lazygit $argv
+end
