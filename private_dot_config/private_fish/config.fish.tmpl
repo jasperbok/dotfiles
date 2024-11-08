@@ -1,0 +1,36 @@
+function fish_prompt
+    set_color yellow
+    echo -n -s (basename $PWD) '> '
+    set_color normal
+end
+
+fish_add_path --path {{ .chezmoi.homeDir }}/go/bin
+fish_add_path --path {{ .chezmoi.homeDir }}/scripts
+fish_add_path --path {{ .chezmoi.homeDir }}/bin
+fish_add_path --path {{ .chezmoi.homeDir }}/.local/bin
+fish_add_path --path /usr/local/sbin
+fish_add_path --path /Applications/Postgres.app/Contents/Versions/latest/bin
+
+# Set Helix as $EDITOR.
+set -x EDITOR hx
+
+{{- if eq .environment "work" }}
+
+set -x ANSIBLE_BACKUPS_FOLDER "{{ .work.ansibleBackupsFolder}}"
+
+set -x GITLAB_API_TOKEN {{ onepasswordRead "op://Employee/gitlab-api-key/password" }}
+set -x GITLAB_USERNAME {{ onepasswordRead "op://Employee/GitLab/username" }}
+set -x ATLASSIAN_API_TOKEN {{ onepasswordRead "op://Employee/Jira/API token" }}
+
+set -x VERDACCIO_REGISTRY_TOKEN "{{ .work.verdaccioToken }}"
+
+# The Slack username that Ansible will mention when running publication.
+set -x ANSIBLE_USER {{ .work.slackUser }}
+
+# Add zlib header locations
+set -gx LDFLAGS -L/usr/local/opt/zlib/lib
+set -gx CPPFLAGS -I/usr/local/opt/zlib/include
+
+# asdf scripts need to be sourced after you have set your $PATH and after you have sourced your framework (oh-my-zsh etc).
+source /usr/local/opt/asdf/libexec/asdf.fish
+{{- end }}
