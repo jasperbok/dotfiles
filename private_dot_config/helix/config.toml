@@ -1,0 +1,15 @@
+theme = "catppuccin_mocha"
+
+[editor]
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+
+[editor.whitespace.characters]
+space = "·"
+tab = "→"
