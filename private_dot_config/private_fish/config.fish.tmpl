@@ -28,6 +28,8 @@ set -x ATLASSIAN_API_TOKEN {{ onepasswordRead "op://Employee/Jira/API token" }}
 
 set -x VERDACCIO_REGISTRY_TOKEN "{{ .work.verdaccioToken }}"
 
+set -x UV_INDEX "https://{{ onepasswordRead "op://Ansible/gitlab-fluxility-deploy-token/username" }}:{{ onepasswordRead "op://Ansible/gitlab-fluxility-deploy-token/password" }}@gitlab.com/api/v4/groups/10804631/-/packages/pypi/simple"
+
 # The Slack username that Ansible will mention when running publication.
 set -x ANSIBLE_USER {{ .work.slackUser }}
 
