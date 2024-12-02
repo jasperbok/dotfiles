@@ -15,6 +15,9 @@ fish_add_path --path /Applications/Postgres.app/Contents/Versions/latest/bin
 # Set Helix as $EDITOR.
 set -x EDITOR hx
 
+# Add JetBrains Toolbox scripts to path
+fish_add_path --path {{ .chezmoi.homeDir }}/Library/Application\ Support/JetBrains/Toolbox/scripts
+
 {{- if eq .environment "work" }}
 
 set -x ANSIBLE_BACKUPS_FOLDER "{{ .work.ansibleBackupsFolder}}"
