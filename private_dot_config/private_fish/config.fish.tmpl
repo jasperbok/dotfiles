@@ -37,6 +37,4 @@ set -x ANSIBLE_USER {{ .work.slackUser }}
 set -gx LDFLAGS -L/usr/local/opt/zlib/lib
 set -gx CPPFLAGS -I/usr/local/opt/zlib/include
 
-# asdf scripts need to be sourced after you have set your $PATH and after you have sourced your framework (oh-my-zsh etc).
-source /usr/local/opt/asdf/libexec/asdf.fish
 {{- end }}
