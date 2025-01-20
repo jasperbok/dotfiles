@@ -5,7 +5,7 @@
 # Remove timeout after pressing escape.
 set-option -s escape-time 0
 
-set-option -sg default-terminal "screen-256color"
+set-option -sg default-terminal "xterm-256color"
 
 # Session options
 # ===============
@@ -24,6 +24,9 @@ set-option -g history-limit 10000
 
 # Use vi-style key bindings in copy mode.
 set-option -g mode-keys vi
+
+# This makes ctrl + arrow keys work inside tmux.
+set-window-option -g xterm-keys on
 
 # Key bindings
 # ============
