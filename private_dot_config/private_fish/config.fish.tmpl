@@ -21,6 +21,7 @@ fish_add_path --path {{ .chezmoi.homeDir }}/Library/Application\ Support/JetBrai
 {{- if eq .environment "work" }}
 
 set -x ANSIBLE_BACKUPS_FOLDER "{{ .work.ansibleBackupsFolder}}"
+set -x ANSIBLE_REPO_DIR "{{ .work.ansibleRepoDir }}"
 
 set -x GITLAB_API_TOKEN {{ onepasswordRead "op://Employee/gitlab-api-key/password" }}
 set -x GITLAB_USERNAME {{ onepasswordRead "op://Employee/GitLab/username" }}
