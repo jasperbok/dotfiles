@@ -6,6 +6,9 @@ mouse = true
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.lsp]
+display-inlay-hints = true
+
 [editor.whitespace.render]
 space = "all"
 tab = "all"
