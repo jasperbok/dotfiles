@@ -31,7 +31,7 @@ set -x VERDACCIO_REGISTRY_TOKEN "{{ .work.verdaccioToken }}"
 
 set -x UV_INDEX "https://{{ onepasswordRead "op://Ansible/gitlab-fluxility-deploy-token/username" }}:{{ onepasswordRead "op://Ansible/gitlab-fluxility-deploy-token/password" }}@gitlab.com/api/v4/groups/10804631/-/packages/pypi/simple"
 
-# The Slack username that Ansible will mention when running publication.
+# The Slack username that Ansible will mention when running publications.
 set -x ANSIBLE_USER {{ .work.slackUser }}
 
 # Add zlib header locations
