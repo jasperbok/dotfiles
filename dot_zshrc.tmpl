@@ -3,3 +3,5 @@ export VERDACCIO_REGISTRY_TOKEN="{{ .work.verdaccioToken }}"
 export NVM_DIR="$HOME/.nvm"
 [ -s "{{ .homebrew.prefix }}/opt/nvm/nvm.sh" ] && \. "{{ .homebrew.prefix }}/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "{{ .homebrew.prefix }}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "{{ .homebrew.prefix }}/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+eval "$(atuin init zsh)"

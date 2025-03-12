@@ -39,3 +39,7 @@ set -gx LDFLAGS -L/usr/local/opt/zlib/lib
 set -gx CPPFLAGS -I/usr/local/opt/zlib/include
 
 {{- end }}
+
+if status is-interactive
+    atuin init fish | source
+end
