@@ -4,6 +4,18 @@
 	l = log --oneline --decorate --graph --pretty='format:%Cred%h%Creset - %C(yellow)%D%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	ll = log --oneline --decorate --graph --pretty='format:%Cred%h%Creset - %C(yellow)%D%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
 
+[branch]
+	sort = -committerdate  # Sort branches by activity. Not by name.
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain  # Highlight moved code with different color.
+	mnemonicPrefix = true  # Use w(orktree), i(ndex) as prefixes, instead of a and b.
+	renames = true  # Detect renamed files in diff.
+
+[tags]
+	sort = version:refname  # Sort tags by version. Not by name.
+
 [user]
 	name = {{ .user.name }}
 	email = {{ .user.email }}
