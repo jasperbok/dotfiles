@@ -40,6 +40,9 @@ set -gx CPPFLAGS -I/usr/local/opt/zlib/include
 
 {{- end }}
 
+# Add uv tool installation folder to path.
+fish_add_path "/Users/jasperbok/.local/bin"
+
 if status is-interactive
     atuin init fish | source
 end
